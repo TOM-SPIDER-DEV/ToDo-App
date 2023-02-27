@@ -1,0 +1,77 @@
+.task {
+  background-color: var(--panel);
+  margin: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 8px;
+}
+.flex-box--tick {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tick--btn {
+  background: rgba(8, 123, 255, 1);
+  position: relative;
+  height: 36px;
+  width: 36px;
+  border-radius: 50px;
+  margin: 8px 16px 8px 16px;
+
+  border: none;
+}
+#tick-disable--btn {
+  cursor: pointer;
+}
+#tick {
+  position: absolute;
+  height: 16px;
+  width: 16px;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  background: none;
+}
+.incomplete-tick {
+  fill-opacity: 0.5;
+}
+.complete-tick {
+  fill-opacity: 1;
+}
+#trash--btn {
+  cursor: pointer;
+  background: none;
+  color: none;
+  border: none;
+}
+#trash {
+  height: 30px;
+  width: 30px;
+  margin-right: 16px;
+}
+.incomplete-trash {
+  fill-opacity: 0.5;
+  cursor: pointer;
+}
+
+.complete-todo {
+  line-height: 24px;
+  text-decoration-line: line-through;
+
+  color: rgba(0, 0, 0, 0.5);
+  font-variation-settings: "slnt" 0;
+}
+#todo-text {
+  width: 375px;
+  white-space: normal;
+}
+@media (max-width: 520px) {
+  .task {
+    width: 352px;
+  }
+  #todo-text {
+    width: 250px;
+    font-size: 16px;
+  }
+}

@@ -1,38 +1,67 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+  --gradient: linear-gradient(
+      90deg,
+      rgba(255, 133, 92, 0.5) 22.51%,
+      rgba(158, 255, 209, 0.5) 99.1%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(255, 133, 92, 0.5) -1.27%,
+      rgba(158, 255, 209, 0.5) 83.23%
+    ),
+    #ffffff;
+  --title: #002a5a;
+  --panel: #fffbf4;
+  --secondary1: #087bff;
+  --secondary2: #f6e6f6;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+html,
+body {
+  background: var(--gradient);
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
+  height: 100vh;
+}
+#root {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+h1 {
+  color: var(--title);
+  font-size: 64px;
+  font-weight: 600;
+}
+p {
+  font-family: "Inter";
+  font-weight: 300;
+  font-size: 20px;
+  color: #000000;
+}
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+/* barra del scroll */
+::-webkit-scrollbar-thumb {
+  background: var(--secondary1);
+  border-radius: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+/* fondo del scroll */
+::-webkit-scrollbar-track {
+  background: var(--secondary2);
+  border-radius: 10px;
+}
+@media (max-width: 1024px) {
+  #root {
+    justify-content: center;
   }
 }
