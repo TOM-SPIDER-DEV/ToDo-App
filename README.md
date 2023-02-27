@@ -1,3 +1,7 @@
+# ToDo-App
+
+This is a simple ToDo application that allows users to create, manage, and complete tasks. Users can add new tasks with a title and mark them as complete when they're done. The application was built using React and styled with CSS, and uses local storage to persist data between sessions.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
