@@ -44,3 +44,12 @@ progress::-moz-progress-bar {
     width: 339px;
   }
 }
+@media (max-width: 405px) {
+  .progress-bar {
+    width: 281px;
+  }
+
+  progress {
+    width: 271px;
+  }
+}

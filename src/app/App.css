@@ -27,6 +27,7 @@ body {
 }
 body {
   height: 100vh;
+  width: 100vw;
 }
 #root {
   display: flex;
@@ -49,13 +50,11 @@ p {
   height: 10px;
 }
 
-/* barra del scroll */
 ::-webkit-scrollbar-thumb {
   background: var(--secondary1);
   border-radius: 10px;
 }
 
-/* fondo del scroll */
 ::-webkit-scrollbar-track {
   background: var(--secondary2);
   border-radius: 10px;

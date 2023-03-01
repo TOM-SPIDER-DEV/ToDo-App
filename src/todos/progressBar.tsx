@@ -1,11 +1,13 @@
 import React from "react";
-import "../App.css";
+import { TodoContext } from "../todoContext/TodoContext";
+import "../app/App.css";
 import "./progressBar.css";
 
-function PogressBar(props: { todos: { text: string; completed: boolean }[] }) {
+function PogressBar() {
+  const { todos } = React.useContext(TodoContext);
   const averageTasks = () => {
-    const totalTasks = props.todos.length;
-    const completeTasks = props.todos.filter((task) => task.completed).length;
+    const totalTasks = todos.length;
+    const completeTasks = todos.filter((task) => task.completed).length;
     const completeAverage = (completeTasks / totalTasks) * 100;
     const completeAverageFlat = Number(completeAverage.toFixed());
 
@@ -18,7 +20,7 @@ function PogressBar(props: { todos: { text: string; completed: boolean }[] }) {
     average = 100;
   }
 
-  const completeTasks = props.todos.filter((task) => !task.completed).length;
+  const completeTasks = todos.filter((task) => !task.completed).length;
   let taskLeft;
   if (completeTasks) {
     taskLeft = `${completeTasks} tasks left`;

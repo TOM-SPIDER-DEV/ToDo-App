@@ -1,36 +1,48 @@
 import React from "react";
-import "../App.css";
+import { TodoContext } from "../todoContext/TodoContext";
+import "../app/App.css";
 import "./newTask.css";
 import { TodoSvg } from "./todoListSvg";
 
-interface Props {
-  onCreate: () => void;
-  handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
-}
-
-function NewTaskBig(props: Props) {
-  return (
-    <section className="create-task--big">
-      <h1 id="title-task">Create new task</h1>
-      <input type="text" onChange={props.handleChange} />
+function NewTask() {
+  const {
+    inputValue,
+    handleChange,
+    createTodos,
+    setShowModal,
+    showModal,
+    width,
+  } = React.useContext(TodoContext);
+  if (width < 1024) {
+    return (
       <button
-        type="button"
-        onClick={props.onCreate}
-        className="new-task--btn-big"
+        className="open-popup--btn"
+        onClick={() => setShowModal(!showModal)}
       >
-        <span style={{ padding: "16px 28px" }}>Create task</span>
+        <span>+</span>
       </button>
+    );
+  } else {
+    return (
+      <section className="create-task--big">
+        <h1 id="title-task">Create new task</h1>
+        <input
+          type="text"
+          onChange={handleChange}
+          placeholder="Write your todo here"
+        />
+        <button
+          type="button"
+          onClick={() => createTodos(inputValue)}
+          className="new-task--btn-big"
+        >
+          <span style={{ padding: "16px 28px" }}>Create task</span>
+        </button>
 
-      <TodoSvg />
-    </section>
-  );
-}
-function NewTaskSmall(props: { setShowModal: () => void }) {
-  return (
-    <button className="open-popup--btn" onClick={props.setShowModal}>
-      <span>+</span>
-    </button>
-  );
+        <TodoSvg />
+      </section>
+    );
+  }
 }
 
-export { NewTaskBig, NewTaskSmall };
+export { NewTask };

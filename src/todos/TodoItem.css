@@ -1,5 +1,6 @@
 .task {
   background-color: var(--panel);
+
   margin: 16px;
   display: flex;
   justify-content: space-between;
@@ -32,6 +33,7 @@
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
   background: none;
+  cursor: pointer;
 }
 .incomplete-tick {
   fill-opacity: 0.5;
@@ -72,6 +74,15 @@
   }
   #todo-text {
     width: 250px;
+    font-size: 16px;
+  }
+}
+@media (max-width: 400px) {
+  .task {
+    width: 280px;
+  }
+  #todo-text {
+    width: 180px;
     font-size: 16px;
   }
 }

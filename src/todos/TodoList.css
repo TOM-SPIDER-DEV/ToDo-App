@@ -5,13 +5,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 16px;
 }
 .task-container {
   margin: 24px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  place-items: center;
   overflow-x: hidden;
   overflow-y: auto;
   max-height: 600px;
@@ -19,6 +18,5 @@
 @media (max-width: 1400px) {
   .flex-box--todo-list {
     width: 90%;
-    height: 100vh;
   }
 }

@@ -1,6 +1,6 @@
 import React from "react";
-
-import "../App.css";
+import { TodoContext } from "../todoContext/TodoContext";
+import "../app/App.css";
 import "./TodoItem.css";
 
 interface Props {
@@ -41,19 +41,15 @@ const Trash: React.FC<Props> = (props) => (
   </svg>
 );
 
-function TodoItem(props: {
-  text: string;
-  completed: boolean;
-  onComplete: () => void;
-  onDelete: () => void;
-}) {
+function TodoItem(props: { text: string; completed: boolean }) {
+  const { completeTodos, deleteTodos } = React.useContext(TodoContext);
   return (
     <section className="task">
       <div className="flex-box--tick">
         <button
           className="tick--btn"
           id={props.completed ? "" : "tick-disable--btn"}
-          onClick={() => !props.completed && props.onComplete()}
+          onClick={() => completeTodos(props.text)}
         >
           <Tick
             className={props.completed ? "complete-tick" : "incomplete-tick"}
@@ -66,7 +62,7 @@ function TodoItem(props: {
       <button
         id="trash--btn"
         onClick={() => {
-          props.completed && props.onDelete();
+          props.completed && deleteTodos(props.text);
         }}
       >
         <Trash className={props.completed ? "" : "incomplete-trash"} />
