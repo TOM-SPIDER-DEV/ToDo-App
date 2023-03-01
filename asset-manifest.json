@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/TOM-SPIDER-DEV/ToDo-App/static/css/main.24cddd5d.css",
-    "main.js": "/TOM-SPIDER-DEV/ToDo-App/static/js/main.fe585969.js",
-    "index.html": "/TOM-SPIDER-DEV/ToDo-App/index.html",
-    "main.24cddd5d.css.map": "/TOM-SPIDER-DEV/ToDo-App/static/css/main.24cddd5d.css.map",
-    "main.fe585969.js.map": "/TOM-SPIDER-DEV/ToDo-App/static/js/main.fe585969.js.map"
+    "main.css": "/ToDo-App/static/css/main.24cddd5d.css",
+    "main.js": "/ToDo-App/static/js/main.fe585969.js",
+    "index.html": "/ToDo-App/index.html",
+    "main.24cddd5d.css.map": "/ToDo-App/static/css/main.24cddd5d.css.map",
+    "main.fe585969.js.map": "/ToDo-App/static/js/main.fe585969.js.map"
   },
   "entrypoints": [
     "static/css/main.24cddd5d.css",
