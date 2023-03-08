@@ -5,7 +5,7 @@
   margin: 32px;
   min-width: 500px;
   width: 40%;
-  height: 840px;
+  height: 80vh;
   background-color: var(--panel);
   border-radius: 16px;
 }
