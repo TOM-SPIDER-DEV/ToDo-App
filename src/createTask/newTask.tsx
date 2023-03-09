@@ -7,12 +7,18 @@ import { TodoSvg } from "./todoListSvg";
 function NewTask() {
   const {
     inputValue,
+    setInputValue,
     handleChange,
     createTodos,
     setShowModal,
     showModal,
     width,
   } = React.useContext(TodoContext);
+
+  const handleButtonClick = () => {
+    setInputValue("");
+  };
+
   if (width < 1024) {
     return (
       <button
@@ -29,11 +35,15 @@ function NewTask() {
         <input
           type="text"
           onChange={handleChange}
+          value={inputValue}
           placeholder="Write your todo here"
         />
         <button
           type="button"
-          onClick={() => createTodos(inputValue)}
+          onClick={() => {
+            createTodos(inputValue);
+            handleButtonClick();
+          }}
           className="new-task--btn-big"
         >
           <span style={{ padding: "16px 28px" }}>Create task</span>

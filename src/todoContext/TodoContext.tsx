@@ -7,7 +7,7 @@ interface Todo {
 
 interface TodoContextProps {
   inputValue: string;
-
+  setInputValue: React.Dispatch<React.SetStateAction<string>>;
   todos: Todo[];
   saveTodos: (newTodos: Todo[]) => void;
   completeTodos: (text: string) => void;
@@ -80,6 +80,7 @@ function TodoProvider(props: { children: React.ReactNode }) {
     <TodoContext.Provider
       value={{
         inputValue,
+        setInputValue,
         todos,
         saveTodos,
         completeTodos,
